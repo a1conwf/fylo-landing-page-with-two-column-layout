@@ -1,0 +1,54 @@
+//Components
+input,
+.btn {
+	height: 45px;
+	max-height: 45px;
+	box-shadow: 2px 3px 6px 0px #00000029;
+	border-radius: 3.125px;
+}
+
+//Input
+input {
+	width: 100%;
+	padding: 14px 0 12px 21px;
+	font-size: 1.2rem;
+	font-family: $openSans;
+	line-height: 1.4rem;
+	letter-spacing: 0.4px;
+	border: 0.625px solid $darkBlue;
+	outline: none;
+	color: $darkBlue;
+}
+
+//Button
+.btn {
+	width: 100%;
+	margin: 0 auto;
+	padding: 12px 0;
+	@include flex(center, center);
+	font-size: 1.4rem;
+	font-family: $Raleway;
+	font-weight: 700;
+	color: $white;
+	background-color: $brightBlue;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: $lightBlue;
+	}
+}
+
+@include lg {
+	input {
+		min-width: 32rem;
+		max-width: 100%;
+		font-size: 1.4rem;
+		line-height: 1.9rem;
+	}
+
+	.btn {
+		min-width: 20rem;
+		max-width: 20rem;
+		margin: 0;
+	}
+}

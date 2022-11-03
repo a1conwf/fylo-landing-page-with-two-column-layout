@@ -1,0 +1,151 @@
+@import "../../scss/layout";
+@import "../../scss/variables";
+@import "../../scss/components";
+
+//Header
+.header {
+	margin-bottom: 90px;
+
+	//Header inner
+	&__inner {
+		padding: 24px 0 98px;
+		@include flex(space-between, center);
+	}
+
+	//Header logo
+	&__logo {
+		width: 80px;
+		height: 24px;
+	}
+
+	//Nav
+	.nav {
+		//Nav list
+		&__list {
+			gap: 10px;
+			@include flex(center, center);
+
+			//Nav list item
+			&-item a {
+				font-size: 1.2rem;
+				font-family: $Raleway;
+				line-height: 1.4rem;
+				color: $darkBlue;
+			}
+		}
+	}
+
+	//Hero section
+	.hero {
+		display: flex;
+		flex-direction: column;
+
+		//Hero img
+		&__img {
+			max-width: 304px;
+			margin: 0 auto 40px auto;
+			height: 225px;
+		}
+
+		//Hero content
+		&__content {
+			text-align: center;
+
+			//Title
+			&-title {
+				margin-bottom: 24px;
+			}
+
+			//Text
+			&-text {
+				margin-bottom: 32px;
+			}
+		}
+	}
+}
+
+@include x-sm {
+	.header .nav__list {
+		gap: 24px;
+	}
+}
+
+@include lg {
+	//Header
+	.header {
+		margin-bottom: 164px;
+
+		//Header inner
+		&__inner {
+			padding: 65px 0 86px;
+		}
+
+		//Header logo
+		&__logo {
+			width: 166px;
+			height: 49px;
+		}
+
+		//Nav
+		.nav {
+			//Nav list
+			&__list {
+				gap: 57px;
+
+				//Nav list item
+				&-item a {
+					font-size: 1.6rem;
+					line-height: 1.9rem;
+				}
+			}
+		}
+
+		//Hero section
+		.hero {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 13px;
+			place-items: center;
+			justify-content: center;
+
+			//Hero img
+			&__img {
+				max-width: 640px;
+				width: 100%;
+				height: auto;
+				margin: 0;
+				grid-column: 2/-1;
+			}
+
+			//Hero content
+			&__content {
+				grid-row: 1;
+				text-align: left;
+
+				//Title
+				&-title {
+					margin-bottom: 15px;
+				}
+
+				//Text
+				&-text {
+					margin-bottom: 25px;
+					font-size: 1.7rem;
+					line-height: 2.4rem;
+					letter-spacing: 0.53px;
+				}
+			}
+		}
+	}
+}
+
+@include xxl {
+	.header .hero {
+		grid-template-columns: 585px 640px;
+		grid-gap: 55px;
+	}
+
+	.header .hero__content {
+		max-width: 585px;
+	}
+}

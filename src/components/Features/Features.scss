@@ -1,0 +1,219 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//Features
+.features {
+	background: url("../../assets/svg/bg-curve-mobile.svg") no-repeat center;
+	background-size: cover;
+	padding: 93px 0 81px;
+	text-align: center;
+
+	//Features img
+	&__img {
+		width: 300px;
+		height: 241px;
+		margin-bottom: 87px;
+	}
+
+	//Features content
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		//Title
+		&-title {
+			margin-bottom: 24px;
+		}
+
+		//First paragraph
+		ul li:first-child p {
+			margin-bottom: 16px;
+		}
+
+		//Last paragraph
+		ul li:last-child p {
+			margin-bottom: 36px;
+		}
+
+		//Cta
+		&-cta {
+			margin: 0 auto 40px auto;
+
+			//Span
+			span {
+				display: flex;
+				padding-bottom: 6px;
+				font-size: 1.2rem;
+				border-bottom: 1px solid $moderateCyan;
+				color: $moderateCyan;
+				transition: all 0.3s ease;
+
+				&::after {
+					content: url("../../assets/svg/icon-arrow.svg");
+					width: 12px;
+					height: 12px;
+					position: relative;
+					left: 8px;
+					top: 4px;
+				}
+
+				&:hover {
+					cursor: pointer;
+					color: $softCyan;
+					border-bottom: 1px solid $softCyan;
+				}
+			}
+		}
+
+		//Testimonial
+		.testimonial {
+			padding: 15px 13px 19px 26px;
+			background-color: $white;
+			box-shadow: 0px 0px 8px 4px #3838380c;
+			border-radius: 4px;
+			text-align: left;
+
+			//Quotes
+			&__quotes {
+				margin-bottom: 10px;
+			}
+
+			//Text
+			&__text {
+				margin-bottom: 12px;
+				line-height: 1.8rem;
+				letter-spacing: 0.38px;
+			}
+
+			//Avatar
+			&__avatar {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+
+				img {
+					width: 24px;
+					height: 24px;
+					border-radius: 50%;
+				}
+
+				//Avatar info
+				&-info {
+					display: flex;
+					flex-direction: column;
+
+					&-name,
+					&-position {
+						line-height: 1.2rem;
+					}
+
+					//Name
+					&-name {
+						font-size: 1rem;
+						font-weight: 700;
+						letter-spacing: 0.45px;
+					}
+
+					//Positions
+					&-position {
+						font-size: 0.8rem;
+						letter-spacing: 0.3px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include lg {
+	//Features
+	.features {
+		background: url("../../assets/svg/bg-curve-desktop.svg") no-repeat center;
+		background-size: cover;
+		padding: 178px 0 107px;
+		text-align: left;
+
+		//Features img
+		&__img {
+			width: 542px;
+			height: 409px;
+			margin-bottom: 0;
+			order: 1;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 90px;
+			place-items: center;
+		}
+
+		//Features content
+		&__content {
+			//Title
+			&-title {
+				margin-bottom: 38px;
+			}
+
+			//Paragraphs
+			ul li:first-child p,
+			ul li:last-child p {
+				margin-bottom: 16px;
+			}
+
+			//Cta
+			&-cta {
+				max-width: 170px;
+				margin: 0 0 45px;
+
+				//Span
+				span {
+					padding-bottom: 4px;
+					font-size: 1.6rem;
+				}
+			}
+
+			//Testimonial
+			.testimonial {
+				max-width: 356px;
+				padding: 45px 34px 26px;
+				border-radius: 5px;
+
+				//Text
+				&__text {
+					margin-bottom: 16px;
+					font-size: 1.3rem;
+					line-height: 1.8rem;
+					letter-spacing: 0.5px;
+				}
+
+				//Avatar
+				&__avatar {
+					img {
+						width: 32px;
+						height: 32px;
+					}
+
+					//Avatar info
+					&-info {
+						&-name,
+						&-position {
+							line-height: 1.5rem;
+						}
+
+						//Name
+						&-name {
+							font-size: 1.1rem;
+							letter-spacing: 0.55px;
+						}
+
+						//Position
+						&-position {
+							letter-spacing: 0.4px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

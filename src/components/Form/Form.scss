@@ -1,0 +1,55 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//Form
+.form {
+	max-width: 304px;
+	margin: 0 auto;
+
+	//Form input
+	&__input {
+		position: relative;
+		margin-bottom: 16px;
+	}
+
+	//Error text
+	.error__text {
+		position: absolute;
+		bottom: -25px;
+		left: 20px;
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+		letter-spacing: 0.4px;
+		color: $softPink;
+		display: none;
+	}
+
+	//Form error input
+	&.error input {
+		border: 0.625px solid $softPink;
+	}
+
+	//Form error text
+	&.error .error__text {
+		display: block;
+	}
+
+	&.error &__input {
+		margin-bottom: 32px;
+	}
+}
+
+@include lg {
+	//Form
+	.form {
+		display: flex;
+		gap: 16px;
+		max-width: 100%;
+		margin: 0;
+
+		//Form input
+		&__input {
+			margin-bottom: 0;
+		}
+	}
+}

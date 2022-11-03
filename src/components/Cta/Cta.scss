@@ -1,0 +1,52 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//Cta
+.cta {
+	padding: 54px 0 71px;
+	text-align: center;
+	color: $white;
+	background-color: #575988;
+
+	//Cta info
+	&__info {
+		//Title
+		&-title {
+			margin-bottom: 16px;
+		}
+
+		//Text
+		&-text {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+@include lg {
+	//Cta
+	.cta {
+		padding: 100px 0 85px;
+		text-align: left;
+
+		.form {
+			flex-direction: column;
+			max-width: 480px;
+			width: 100%;
+		}
+
+		.container {
+			display: grid;
+			grid-gap: 225px;
+			grid-template-columns: repeat(2, 1fr);
+			place-items: center;
+		}
+
+		//Cta info
+		&__info {
+			//Text
+			&-text {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

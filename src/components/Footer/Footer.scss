@@ -1,0 +1,143 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+//Footer
+.footer {
+	padding: 65px 0 39px;
+	background-color: $darkBlue;
+
+	//Each link styling
+	li a {
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+		color: $white;
+	}
+
+	//Logo
+	&__logo {
+		width: 105px;
+		height: 30px;
+		margin-bottom: 32px;
+	}
+
+	//Footer content
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	//Contacts list
+	&__contacts {
+		margin-bottom: 32px;
+
+		//List item
+		li {
+			margin-bottom: 16px;
+		}
+
+		//Last list item
+		& li:last-child {
+			margin-bottom: 0;
+		}
+
+		//List item content
+		li a {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
+
+		//List item img
+		li a img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	//Footer links
+	&__links {
+		margin-bottom: 32px;
+
+		//Each item
+		&-item {
+			margin-bottom: 16px;
+
+			& a:hover {
+				color: $lightBlue;
+			}
+		}
+	}
+
+	//Footer socials
+	&__socials {
+		@include flex(center, center);
+
+		//Each item
+		&-item {
+			padding: 8px;
+			border: 1px solid $white;
+			border-radius: 50%;
+			margin-right: 10px;
+			cursor: pointer;
+
+			a {
+				@include flex(center, center);
+			}
+
+			img {
+				width: 20px;
+				height: 20px;
+			}
+
+			//Hover effects
+			&:hover {
+				border: 1px solid $lightBlue;
+			}
+
+			&:hover img {
+				filter: invert(59%) sepia(20%) saturate(3210%) hue-rotate(197deg) brightness(100%) contrast(103%);
+			}
+		}
+
+		&-item:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+@include lg {
+	//Footer
+	.footer {
+		padding: 92px 0 86px;
+
+		//Logo
+		&__logo {
+			width: 135px;
+			height: 39px;
+			margin-bottom: 36px;
+		}
+
+		//Footer content
+		&__content {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			justify-items: center;
+		}
+
+		//Contacts list
+		&__contacts {
+			margin-bottom: 0;
+			justify-self: flex-start;
+		}
+
+		//Footer links
+		&__links {
+			margin-bottom: 0;
+		}
+
+		//Footer socials
+		&__socials {
+			@include flex(center, flex-start);
+		}
+	}
+}
